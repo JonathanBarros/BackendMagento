@@ -15,6 +15,7 @@ interface ConfigInterface
     const XML_PATH_WJ_LINX_GENERAL = 'general/';
     const XML_FIELD_ENABLED = 'enabled';
     const XML_FIELD_PRODUCT_IDS = 'product_ids';
+    const XML_FIELD_ENABLED_TIME_GATE = 'enabled_time_gate';
     const XML_FIELD_START_TIME_GATE = 'start_time_gate';
     const XML_FIELD_END_TIME_GATE = 'end_time_gate';
 
@@ -61,6 +62,15 @@ interface ConfigInterface
      * @return string
      */
     public function getProductIds(int $storeId = null): string;
+
+    /**
+     * get the enabled time gate configuration
+     *
+     * @param int|null $storeId
+     *
+     * @return bool
+     */
+    public function isTimeGateEnabled(int $storeId = null): bool;
 
     /**
      * get the start time gate configuration

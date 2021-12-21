@@ -68,6 +68,16 @@ class Config implements ConfigInterface
     /**
      * @inheritDoc
      */
+    public function isTimeGateEnabled(int $storeId = null): bool
+    {
+        return (bool)$this->getConfigValueGeneral(
+            self::XML_FIELD_ENABLED_TIME_GATE, ScopeInterface::SCOPE_STORES, $storeId
+        );
+    }
+
+    /**
+     * @inheritDoc
+     */
     public function getStartTimeGate(int $storeId = null): string
     {
         return (string)$this->getConfigValueGeneral(

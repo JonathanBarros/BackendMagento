@@ -87,7 +87,7 @@ class Product extends Action
         $startTimeGate = $this->configInterface->getStartTimeGate();
         $endTimeGate = $this->configInterface->getEndTimeGate();
 
-        if (!$this->devigetHelper->validateTimeGate($startTimeGate, $endTimeGate)) {
+        if ($this->configInterface->isTimeGateEnabled() && !$this->devigetHelper->validateTimeGate($startTimeGate, $endTimeGate)) {
             return $this->getResponse()->setRedirect('/');
         }
 
