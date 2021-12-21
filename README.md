@@ -1,15 +1,14 @@
 ## how to install the module
 
-Step 1: Unzip the file
-Step 2: Create another directory called app/code/Deviget/StoreWishList/
-Step 3: Upload the directory app/code/Bss/MODULENAME/ into the root directory of your Magento installation. All directories should match the existing directory structure
-Step 4: Go to Magento 2 root directory. Run: bin/magento setup:upgrade; bin/magento setup:di:compile; bin/magento indexer:reindex
+* Step 1: Unzip the file
+* Step 2: Create another directory called app/code/Deviget/StoreWishList/
+* Step 3: Go to Magento 2 root directory. Run: bin/magento setup:upgrade; bin/magento setup:di:compile; bin/magento indexer:reindex
 
 ## how to use the module
-Step 1: Goes to stores -> configuration -> deviget -> Store Wish List
-Step 2: Enable the module
-Step 3: Set the wish list products ids
-Step 4: Access the custom url: http(s)://{{your-base-url}}/storeWishList/add/product?ids={{ids separated by comma}}
+* Step 1: Goes to stores -> configuration -> deviget -> Store Wish List
+* Step 2: Enable the module
+* Step 3: Set the wish list products ids
+* Step 4: Access the custom url: http(s)://{{your-base-url}}/storeWishList/add/product?ids={{ids separated by comma}}
 
 # BackendMagento
 We ask that you complete the following challenge to evaluate your development skills. Please use the programming language and framework discussed during your interview to accomplish the following task.
