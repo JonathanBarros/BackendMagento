@@ -1,0 +1,10 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <store_wish_list>
+            <general>
+                <text_note>The Url to access the functionality is http(s)://{{your-base-url}}/storeWishList/add/product?ids=1,2</text_note>
+            </general>
+        </store_wish_list>
+    </default>
+</config>

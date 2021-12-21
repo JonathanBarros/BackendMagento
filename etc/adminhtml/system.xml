@@ -1,0 +1,55 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="deviget" translate="label" sortOrder="200">
+            <label>Deviget</label>
+        </tab>
+        <section id="store_wish_list" sortOrder="10" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+            <label>Store Wish List</label>
+            <tab>deviget</tab>
+            <resource>Deviget_StoreWishList::config_deviget_store_wish_list</resource>
+            <group id="general" sortOrder="10" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+                <label>Settings</label>
+                <field id="text_note" translate="label" type="label" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="1">
+                    <label>NOTE:</label>
+                </field>
+                <field id="enabled" type="select" sortOrder="10" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+                    <label>Enabled</label>
+                    <comment>Enable custom url to add product(s) to the cart.</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Enabledisable</source_model>
+                </field>
+                <field id="product_ids" type="text" sortOrder="20" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+                    <label>Product Ids</label>
+                    <comment>The product ids separated by commas. Ex.: '1,2,3,4'</comment>
+                    <depends>
+                        <field id="store_wish_list/general/enabled">1</field>
+                    </depends>
+                </field>
+                <field id="enabled_time_gate" type="select" sortOrder="30" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+                    <label>Enabled a time gate</label>
+                    <comment>Enable a time gate validation</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Enabledisable</source_model>
+                    <depends>
+                        <field id="store_wish_list/general/enabled">1</field>
+                    </depends>
+                </field>
+                <field id="start_time_gate" translate="label" sortOrder="40" type="date" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Start time gate</label>
+                    <frontend_model>Deviget\StoreWishList\Block\Adminhtml\System\Config\DateTime</frontend_model>
+                    <depends>
+                        <field id="store_wish_list/general/enabled">1</field>
+                        <field id="store_wish_list/general/enabled_time_gate">1</field>
+                    </depends>
+                </field>
+                <field id="end_time_gate" translate="label" sortOrder="50" type="date" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>End time gate</label>
+                    <frontend_model>Deviget\StoreWishList\Block\Adminhtml\System\Config\DateTime</frontend_model>
+                    <depends>
+                        <field id="store_wish_list/general/enabled">1</field>
+                        <field id="store_wish_list/general/enabled_time_gate">1</field>
+                    </depends>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
